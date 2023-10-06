@@ -6,9 +6,8 @@ This article will tell you how to develop custom theme.
 
 In most cases, you don't want to develop a theme from scratch, but want to extend it based on the default theme. At this time, you can refer to the following methods for theme development.
 
-:::tip
+tip
 If you want to develop a custom theme from scratch, you can go to [Redevelop a custom theme](/guide/advanced/custom-theme#redevelop-a-custom-theme).
-:::
 
 ### 1. Basic structure
 
@@ -21,8 +20,8 @@ By default, you need to create a `theme` directory under the project root direct
 
 You can write the `theme/index.tsx` file as follows:
 
-```tsx title="theme/index.tsx"
-import Theme from 'rspress/theme';
+```tsx
+import Theme from "rspress/theme";
 
 const Layout = () => <Theme.Layout beforeNavTitle={<div>some content</div>} />;
 
@@ -31,7 +30,7 @@ export default {
   Layout,
 };
 
-export * from 'rspress/theme';
+export * from "rspress/theme";
 ```
 
 On the one hand, you need to export a theme configuration object through `export default`, on the other hand, you need to export all named exported content through `export * from 'rspress/theme'` so as to ensure your theme works fine.
@@ -41,7 +40,7 @@ On the one hand, you need to export a theme configuration object through `export
 It is worth noting that the Layout component has designed a series of props to support slot elements. You can use these props to extend the layout of the default theme. For example, change the above Layout component to the following form:
 
 ```tsx
-import Theme from 'rspress/theme';
+import Theme from "rspress/theme";
 
 // Show all props below
 const Layout = () => (
@@ -83,15 +82,15 @@ export default {
   Layout,
 };
 
-export * from 'rspress/theme';
+export * from "rspress/theme";
 ```
 
 ### 3. Custom Home page and 404 page
 
 To extend the components of the default theme, in addition to slots, you can also customize the Home page and 404 page, such as:
 
-```tsx title="theme/index.tsx"
-import Theme from 'rspress/theme';
+```tsx
+import Theme from "rspress/theme";
 
 const Layout = () => <Theme.Layout beforeNavTitle={<div>some content</div>} />;
 
@@ -107,7 +106,7 @@ export default {
   NotFoundLayout,
 };
 
-export * from 'rspress/theme';
+export * from "rspress/theme";
 ```
 
 Of course, you may need to use page data during the development process, you can get it through the Hook [`usePageData`](/api/client-api/api-runtime#usepagedata).
@@ -145,7 +144,7 @@ Layout component will be used to render the layout of the entire document site, 
 
 ```ts
 // theme/index.tsx
-import { Navbar } from './Navbar';
+import { Navbar } from "./Navbar";
 
 function Layout() {
   return (
@@ -175,7 +174,7 @@ So the question is, how does the theme component get the page data and the conte
 Get information about all data on the site, such as:
 
 ```tsx
-import { usePageData } from 'rspress/runtime';
+import { usePageData } from "rspress/runtime";
 
 function MyComponent() {
   const pageData = usePageData();
@@ -188,7 +187,7 @@ function MyComponent() {
 Get the current language information, such as:
 
 ```tsx
-import { useLang } from 'rspress/runtime';
+import { useLang } from "rspress/runtime";
 
 function MyComponent() {
   const lang = useLang();
@@ -201,7 +200,7 @@ function MyComponent() {
 Get MDX component content, such as:
 
 ```tsx
-import { Content } from 'rspress/runtime';
+import { Content } from "rspress/runtime";
 
 function Layout() {
   return (
@@ -217,7 +216,7 @@ function Layout() {
 [react-router-dom](https://reactrouter.com/) is used inside the framework to implement routing, so you can directly use the Hook of `react-router-dom`, for example:
 
 ```ts
-import { useLocation } from 'rspress/runtime';
+import { useLocation } from "rspress/runtime";
 
 function Layout() {
   const location = useLocation();
@@ -237,7 +236,7 @@ The default theme comes with built-in search functionality, which we can break d
 If you want to fully reuse the search functionality, you can directly import the `Search` component, like so:
 
 ```tsx
-import { Search } from 'rspress/theme';
+import { Search } from "rspress/theme";
 
 function MySearch() {
   return <Search />;
@@ -249,8 +248,8 @@ function MySearch() {
 If you only want to reuse the search panel and customize the search box part, then you need to import the `SearchPanel` component in your theme component, like so:
 
 ```tsx
-import { useState } from 'react';
-import { SearchPanel } from 'rspress/theme';
+import { useState } from "react";
+import { SearchPanel } from "rspress/theme";
 
 function MySearch() {
   const [focused, setFocused] = useState(false);

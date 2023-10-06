@@ -7,11 +7,11 @@
 
 部署基路径。比如，如果你计划将你的站点部署到 `https://foo.github.io/bar/`，那么你应该将 `base` 设置为 `"/bar/"`：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  base: '/bar/',
+  base: "/bar/",
 });
 ```
 
@@ -22,11 +22,11 @@ export default defineConfig({
 
 站点标题。这个参数将被用作 HTML 页面的标题。例如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  title: '我的站点',
+  title: "我的站点",
 });
 ```
 
@@ -37,11 +37,11 @@ export default defineConfig({
 
 站点描述。这将用作 HTML 页面的描述。例如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  description: '我的站点描述',
+  description: "我的站点描述",
 });
 ```
 
@@ -52,11 +52,11 @@ export default defineConfig({
 
 站点图标。这个路径将用作 HTML 页面的图标路径。例如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  icon: '/favicon.ico',
+  icon: "/favicon.ico",
 });
 ```
 
@@ -69,11 +69,11 @@ export default defineConfig({
 
 站点 logo。这个路径将用作导航栏左上角的 logo 路径。例如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  logo: '/logo.png',
+  logo: "/logo.png",
 });
 ```
 
@@ -81,13 +81,13 @@ export default defineConfig({
 
 当然你可以针对浅色/暗黑模式设置不同的 logo：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   logo: {
-    dark: '/logo-dark.png',
-    light: '/logo-light.png',
+    dark: "/logo-dark.png",
+    light: "/logo-light.png",
   },
 });
 ```
@@ -99,11 +99,11 @@ export default defineConfig({
 
 自定义构建站点的输出目录。比如:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  outDir: 'doc_build',
+  outDir: "doc_build",
 });
 ```
 
@@ -122,22 +122,22 @@ export interface Locale {
 
 站点的多语言配置。比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   locales: [
     {
-      lang: 'en-US',
-      label: 'English',
-      title: 'Doc Tools',
-      description: 'Doc Tools',
+      lang: "en-US",
+      label: "English",
+      title: "Doc Tools",
+      description: "Doc Tools",
     },
     {
-      lang: 'zh-CN',
-      label: '简体中文',
-      title: '文档框架',
-      description: '文档框架',
+      lang: "zh-CN",
+      label: "简体中文",
+      title: "文档框架",
+      description: "文档框架",
     },
   ],
 });
@@ -154,15 +154,15 @@ export default defineConfig({
 
 使用示例：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   // 关闭图片放大功能
   mediumZoom: false,
   // 配置 CSS 选择器，自定义要放大的图片，默认为 '.rspress-doc img'
   mediumZoom: {
-    selector: '.rspress-doc img',
+    selector: ".rspress-doc img",
   },
 });
 ```
@@ -173,20 +173,20 @@ export default defineConfig({
 
 你可以通过 `searchHooks` 参数来增加搜索运行时钩子逻辑，比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+```ts
+import { defineConfig } from "rspress/config";
+import path from "path";
 
 export default defineConfig({
   search: {
-    searchHooks: path.join(__dirname, 'searchHooks.ts'),
+    searchHooks: path.join(__dirname, "searchHooks.ts"),
   },
 });
 ```
 
 `searchHooks.ts` 中，你需要导出 `onSearch` 函数，这个函数将会在每次搜索时被调用，入参为搜索关键词，你可以在这里自定义搜索拦截逻辑，比如：
 
-```ts title="searchHooks.ts"
+```ts
 // 支持 async 函数
 export async function onSearch(query: string) {
   // 执行自定义逻辑，比如打点上报
@@ -201,33 +201,33 @@ export async function onSearch(query: string) {
 
 你可以通过 `globalUIComponents` 参数来增加全局 UI 组件，比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+```ts
+import { defineConfig } from "rspress/config";
+import path from "path";
 
 export default defineConfig({
-  globalUIComponents: [path.join(__dirname, 'components', 'MyComponent.tsx')],
+  globalUIComponents: [path.join(__dirname, "components", "MyComponent.tsx")],
 });
 ```
 
 `globalUIComponents` 的每一项可以是一个字符串，代表组件的文件路径；也可以是一个数组，第一项为组件的文件路径，第二项为组件的 props 对象，比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   globalUIComponents: [
     [
-      path.join(__dirname, 'components', 'MyComponent.tsx'),
+      path.join(__dirname, "components", "MyComponent.tsx"),
       {
-        foo: 'bar',
+        foo: "bar",
       },
     ],
   ],
 });
 ```
 
-import GlobalUIComponents from '../../fragments/global-ui-components.mdx';
+import GlobalUIComponents from "../../fragments/global-ui-components.mdx";
 
 <GlobalUIComponents />
 
@@ -237,13 +237,13 @@ import GlobalUIComponents from '../../fragments/global-ui-components.mdx';
 
 你可以通过 `multiVersion` 参数来增加多版本文档支持，比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   multiVersion: {
-    default: 'v1',
-    versions: ['v1', 'v2'],
+    default: "v1",
+    versions: ["v1", "v2"],
   },
 });
 ```
@@ -264,11 +264,11 @@ export default defineConfig({
 在路由中添加一些额外的文件。默认情况下，只有文档根目录中的文件才会包含在路由中。如果你想在路由中添加一些额外的文件，你可以使用这个选项。例如：
 
 ```js
-import { defineConfig } from 'rspress/config';
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   route: {
-    include: ['other-dir/**/*'],
+    include: ["other-dir/**/*"],
   },
 });
 ```
@@ -283,11 +283,11 @@ export default defineConfig({
 从路由中排除一些文件。例如：
 
 ```js
-import { defineConfig } from 'rspress/config';
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   route: {
-    exclude: ['custom.tsx', 'component/**/*'],
+    exclude: ["custom.tsx", "component/**/*"],
   },
 });
 ```
@@ -302,11 +302,11 @@ export default defineConfig({
 将包含在路由中的文件的扩展名。默认情况下，Rspress 会在路由中包含所有 `'js'、'jsx'、'ts'、'tsx'、'md'、'mdx' 文件。如果你想自定义扩展名，你可以使用这个选项。例如：
 
 ```js
-import { defineConfig } from 'rspress/config';
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   route: {
-    extensions: ['.jsx', '.md', '.mdx'],
+    extensions: [".jsx", ".md", ".mdx"],
   },
 });
 ```
@@ -319,11 +319,11 @@ export default defineConfig({
 开启后可以生成无 `.html` 后缀的链接，URL 可以更加简洁。
 
 ```js
-import { defineConfig } from 'rspress/config';
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   route: {
-    cleanUrls: true
+    cleanUrls: true,
   },
 });
 ```

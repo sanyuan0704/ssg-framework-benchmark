@@ -2,8 +2,8 @@
 
 Theme config is located under `themeConfig` in the `doc` param. For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
@@ -24,9 +24,9 @@ interface NavItem {
   // Navbar text
   text: string;
   // Navbar link
-  link: '/';
+  link: "/";
   // Activation rules for navbar links
-  activeMatch: '^/$|^/';
+  activeMatch: "^/$|^/";
   // svg tag string or image URL(optional)
   tag?: string;
 }
@@ -36,19 +36,19 @@ interface NavItem {
 
 For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
     nav: [
       {
-        text: 'Home',
-        link: '/',
+        text: "Home",
+        link: "/",
       },
       {
-        text: 'Guide',
-        link: '/guide/',
+        text: "Guide",
+        link: "/guide/",
       },
     ],
   },
@@ -69,38 +69,38 @@ interface NavGroup {
 
 For example the following configuration:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
     nav: [
       {
-        text: 'Home',
-        link: '/',
+        text: "Home",
+        link: "/",
       },
       {
-        text: 'Guide',
+        text: "Guide",
         items: [
           {
-            text: 'Getting Started',
-            link: '/guide/getting-started',
+            text: "Getting Started",
+            link: "/guide/getting-started",
           },
           {
-            text: 'Advanced',
-            link: '/guide/advanced',
+            text: "Advanced",
+            link: "/guide/advanced",
           },
           // Also support sub group menu
           {
-            text: 'Group',
+            text: "Group",
             items: [
               {
-                text: 'Personal',
-                link: 'http://xxx.com/',
+                text: "Personal",
+                link: "http://xxx.com/",
               },
               {
-                text: 'Company',
-                link: 'http://xxx.com/',
+                text: "Company",
+                link: "http://xxx.com/",
               },
             ],
           },
@@ -150,33 +150,33 @@ type SidebarItem =
 
 For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
     sidebar: {
-      '/guide/': [
+      "/guide/": [
         {
-          text: 'Getting Started',
+          text: "Getting Started",
           items: [
             // Fill in an object
             {
-              text: 'Introduction',
-              link: '/guide/getting-started/introduction',
+              text: "Introduction",
+              link: "/guide/getting-started/introduction",
             },
             {
-              text: 'Installation',
-              link: '/guide/getting-started/installation',
+              text: "Installation",
+              link: "/guide/getting-started/installation",
             },
           ],
         },
         {
-          text: 'Advanced',
+          text: "Advanced",
           items: [
             // Fill in the link string directly
-            '/guide/advanced/customization',
-            '/guide/advanced/markdown',
+            "/guide/advanced/customization",
+            "/guide/advanced/markdown",
           ],
         },
       ],
@@ -203,13 +203,13 @@ export interface Footer {
 
 For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
     footer: {
-      message: 'This is a footer',
+      message: "This is a footer",
     },
   },
 });
@@ -224,12 +224,12 @@ Configure the title of the outline in the outline panel.
 
 For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
-    outlineTitle: 'Outline',
+    outlineTitle: "Outline",
   },
 });
 ```
@@ -243,8 +243,8 @@ Whether to display the last update time, it is not displayed by default.
 
 For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
@@ -262,12 +262,12 @@ The text of the last update time.
 
 For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
-    lastUpdatedText: 'Last Updated',
+    lastUpdatedText: "Last Updated",
   },
 });
 ```
@@ -279,12 +279,12 @@ export default defineConfig({
 
 The text of the previous page. for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
-    prevPageText: 'Previous Page',
+    prevPageText: "Previous Page",
   },
 });
 ```
@@ -297,26 +297,26 @@ export default defineConfig({
 You can add related links through the following config, such as `github` links, `twitter` links, etc.
 Related links support three modes: `link mode` `text mode` `image mode`, for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
     socialLinks: [
       {
-        icon: 'github',
-        mode: 'link',
-        content: 'https://github.com/sanyuan0704/island.js',
+        icon: "github",
+        mode: "link",
+        content: "https://github.com/sanyuan0704/island.js",
       },
       {
-        icon: 'wechat',
-        mode: 'text',
-        content: 'wechat: xxx',
+        icon: "wechat",
+        mode: "text",
+        content: "wechat: xxx",
       },
       {
-        icon: 'qq',
-        mode: 'img',
-        content: '/qrcode.png',
+        icon: "qq",
+        mode: "img",
+        content: "/qrcode.png",
       },
     ],
   },
@@ -331,22 +331,22 @@ Related links support the following types of images, which can be selected throu
 
 ```ts
 export type SocialLinkIcon =
-  | 'lark'
-  | 'discord'
-  | 'facebook'
-  | 'github'
-  | 'instagram'
-  | 'linkedin'
-  | 'slack'
-  | 'twitter'
-  | 'youtube'
-  | 'weixin'
-  | 'qq'
-  | 'juejin'
-  | 'zhihu'
-  | 'bilibili'
-  | 'weibo'
-  | 'gitlab'
+  | "lark"
+  | "discord"
+  | "facebook"
+  | "github"
+  | "instagram"
+  | "linkedin"
+  | "slack"
+  | "twitter"
+  | "youtube"
+  | "weixin"
+  | "qq"
+  | "juejin"
+  | "zhihu"
+  | "bilibili"
+  | "weibo"
+  | "gitlab"
   | { svg: string };
 ```
 
@@ -379,12 +379,12 @@ export default defineConfig({
 
 Text for the next page. for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
-    nextPageText: 'Next Page',
+    nextPageText: "Next Page",
   },
 });
 ```
@@ -436,8 +436,8 @@ export interface LocaleConfig {
 
 Whether a Dark/Light mode toggle button appears. for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
@@ -453,8 +453,8 @@ export default defineConfig({
 
 Whether to hide the navigation bar. For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
@@ -472,8 +472,8 @@ Whether there is an animation effect when switching between pages. For example:
 
 > The animation is not configurable for now.
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {

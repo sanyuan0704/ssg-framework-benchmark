@@ -8,12 +8,12 @@ Used to customize the configurations of Modern.js Builder. For complete configur
 
 For example, change the output directory to `doc_dist`:
 
-```ts title="rspress.config.ts"
+```ts
 export default defineConfig({
   builderConfig: {
     output: {
       distPath: {
-        root: 'doc_dist',
+        root: "doc_dist",
       },
     },
   },
@@ -26,9 +26,9 @@ export default defineConfig({
 
 Used to customize the [plugins of Modern.js Builder](https://modernjs.dev/builder/en/plugins/introduction.html). For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import { builderPluginStylus } from '@rspress/builder-plugin-stylus';
+```ts
+import { defineConfig } from "rspress/config";
+import { builderPluginStylus } from "@rspress/builder-plugin-stylus";
 
 export default defineConfig({
   builderPlugins: [builderPluginStylus()],
@@ -60,16 +60,16 @@ Configure MDX-related compilation abilities.
 
 Configure the remark plugins. for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   markdown: {
     remarkPlugins: [
       [
-        require('remark-autolink-headings'),
+        require("remark-autolink-headings"),
         {
-          behavior: 'wrap',
+          behavior: "wrap",
         },
       ],
     ],
@@ -83,16 +83,16 @@ export default defineConfig({
 
 Configure the rehype plugin. for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   markdown: {
     rehypePlugins: [
       [
-        require('rehype-autolink-headings'),
+        require("rehype-autolink-headings"),
         {
-          behavior: 'wrap',
+          behavior: "wrap",
         },
       ],
     ],
@@ -107,8 +107,8 @@ export default defineConfig({
 
 Whether to check for dead links. for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   markdown: {
@@ -125,7 +125,7 @@ After enabling this config, the framework will check the links in the document b
 
 Whether to use the Rust version of the MDX compiler, an experimental feature. For example:
 
-import MdxRs from '../../fragments/mdx-rs';
+import MdxRs from "../../fragments/mdx-rs.mdx";
 
 <MdxRs />
 
@@ -141,23 +141,22 @@ Whether to display the line number of the code block. Defaults to `false`.
 
 Register component to the global scope, which will make it automatically available in every MDX file, without any import statements.For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+```ts
+import { defineConfig } from "rspress/config";
+import path from "path";
 
 export default defineConfig({
   markdown: {
-    globalComponents: [path.join(__dirname, 'src/src/components/Alert.tsx')],
+    globalComponents: [path.join(__dirname, "src/src/components/Alert.tsx")],
   },
 });
 ```
 
 Then you can use the `Alert` component in any MDX file:
 
-```mdx title="test.mdx"
+```mdx
 <Alert type="info">This is a info alert</Alert>
 ```
 
-:::danger Danger
+danger Danger
 Do not enable `experimentalMdxRs` when configuring `globalComponents`, otherwise the global components will not take effect.
-:::

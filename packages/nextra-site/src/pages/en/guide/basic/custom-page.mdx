@@ -14,33 +14,33 @@ In some scenarios, you may need to add some custom global components to the page
 
 Add the following config in `rspress.config.ts`:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+```ts
+import { defineConfig } from "rspress/config";
+import path from "path";
 
 export default defineConfig({
-  globalUIComponents: [path.join(__dirname, 'components', 'MyComponent.tsx')],
+  globalUIComponents: [path.join(__dirname, "components", "MyComponent.tsx")],
 });
 ```
 
 Each item of `globalUIComponents` can be a string, representing the file path of the component; or it can be an array, the first item is the file path of the component, and the second item is the props object of the component, such as:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   globalUIComponents: [
     [
-      path.join(__dirname, 'components', 'MyComponent.tsx'),
+      path.join(__dirname, "components", "MyComponent.tsx"),
       {
-        foo: 'bar',
+        foo: "bar",
       },
     ],
   ],
 });
 ```
 
-import GlobalUIComponents from '@en/fragments/global-ui-components';
+import GlobalUIComponents from "@en/fragments/global-ui-components.mdx";
 
 <GlobalUIComponents />
 
@@ -52,12 +52,12 @@ In some scenarios, you may need to add some global styles on top of the theme UI
 
 Add the following configuration in `rspress.config.ts`:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+```ts
+import { defineConfig } from "rspress/config";
+import path from "path";
 
 export default defineConfig({
-  globalStyles: path.join(__dirname, 'styles/index.css'),
+  globalStyles: path.join(__dirname, "styles/index.css"),
 });
 ```
 
@@ -107,7 +107,7 @@ Rspress's convention-based routing supports two types of routes, one is document
 
 For the former, you can add the `pageType` field in the frontmatter to specify the layout structure of the page, such as:
 
-```mdx title="foo.mdx"
+```mdx
 ---
 pageType: custom
 ---
@@ -115,16 +115,16 @@ pageType: custom
 
 For the latter, you can add the following export to specify `pageType`:
 
-```tsx title="foo.tsx"
+```tsx
 export const frontmatter = {
   // Declare layout type
-  pageType: 'custom',
+  pageType: "custom",
 };
 ```
 
 pageType can be configured as the following values:
 
-import PageType from '@en/fragments/page-type';
+import PageType from "@en/fragments/page-type.mdx";
 
 <PageType />
 
@@ -138,7 +138,7 @@ In addition to the `pageType` page layout level configuration, Rspress also prov
 
 Example:
 
-```mdx title="foo.mdx"
+```mdx
 ---
 navbar: false
 sidebar: false

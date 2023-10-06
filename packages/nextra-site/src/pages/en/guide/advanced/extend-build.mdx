@@ -6,14 +6,14 @@ Rspress builds documents based on the Rspack mode of [Modern.js Builder](https:/
 
 Modern.js Builder provides flexible build configurations, you can use [builderConfig](/api/config/config-build.html#builderconfig) to customize these configurations. For example, change the output directory to `doc_dist`:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   builderConfig: {
     output: {
       distPath: {
-        root: 'doc_dist',
+        root: "doc_dist",
       },
     },
     tools: {
@@ -25,39 +25,35 @@ export default defineConfig({
 });
 ```
 
-:::tip
+tip
 
 You can learn more configurations through the [Modern.js Builder - API](https://modernjs.dev/builder/en/api/index.html) documentation.
 
 Note that Rspress only supports Rspack bundler, so some configurations related to webpack will not work, such as `tools.webpack`. Of course, you can use the `tools.rspack` to customize the Rspack config.
-
-:::
 
 ## MDX Compilation
 
 The compilation of MDX in the framework is based on [unified](https://github.com/unifiedjs/unified), and you can add related compilation plugins through `markdown` configuration. for example
 :
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   markdown: {
     remarkPlugins: [
       [
-        require('remark-autolink-headings'),
+        require("remark-autolink-headings"),
         {
-          behavior: 'wrap',
+          behavior: "wrap",
         },
       ],
     ],
-    rehypePlugins: [require('rehype-slug')],
+    rehypePlugins: [require("rehype-slug")],
   },
 });
 ```
 
-:::warning
+warning
 
 Only the JS version of the MDX compiler supports compilation plugins. This means that if you have enabled the mdx-rs compiler, you need to remove the `markdown.experimenalMdxRs: true` configuration item in rspress config file.
-
-:::

@@ -32,7 +32,7 @@ The specific mapping rules are as follows:
 
 In conventional routing, in addition to `.md(x)` files, you can also use `.tsx` files as route components. By default, a component is exported in `.tsx`, and this component will be automatically registered in the route. For example:
 
-```tsx title="foo.tsx"
+```tsx
 export default () => {
   return <div>foo</div>;
 };
@@ -40,11 +40,11 @@ export default () => {
 
 Of course, if you want to customize the layout, you can add an export to declare the layout type. For example:
 
-```tsx title="foo.tsx"
+```tsx
 export const frontmatter = {
   // Declare layout type
   // The custom layout here will not have a sidebar
-  pageType: 'custom',
+  pageType: "custom",
 };
 ```
 
@@ -54,7 +54,7 @@ For detailed meanings of each `pageType`, please refer to the [API documentation
 
 If you want to customize the routing behavior, you can use the `route` field in the configuration file. For example:
 
-```ts title="rspress.config.ts"
+```ts
 import { defineConfig } from 'rspress/config';
 
 export default defineConfig({

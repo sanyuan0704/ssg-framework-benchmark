@@ -1,12 +1,14 @@
+# 123
+
 The framework provides `useI18n` this hook to get the internationalized text, the usage is as follows:
 
 ```tsx
-import { useI18n } from 'rspress/runtime';
+import { useI18n } from "rspress/runtime";
 
 const MyComponent = () => {
   const { t } = useI18n();
 
-  return <div>{t('getting-started')}</div>;
+  return <div>{t("getting-started")}</div>;
 };
 ```
 
@@ -25,12 +27,12 @@ For better type hinting, you can configure `paths` in tsconfig.json:
 Then use it like this in the component:
 
 ```tsx
-import { useI18n } from 'rspress/runtime';
+import { useI18n } from "rspress/runtime";
 
 const MyComponent = () => {
-  const { t } = useI18n<keyof typeof import('i18n')>();
+  const { t } = useI18n<keyof typeof import("i18n")>();
 
-  return <div>{t('getting-started')}</div>;
+  return <div>{t("getting-started")}</div>;
 };
 ```
 

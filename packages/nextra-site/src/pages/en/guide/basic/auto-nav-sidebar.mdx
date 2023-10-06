@@ -2,9 +2,8 @@
 
 In Rspress, in addition to declaring [nav](/api/config/config-theme.html#nav) and [sidebar](/api/config/config-theme.html#sidebar) through `themeConfig` in the config file, you You can also automatically generate the nav bar and sidebar by declaring the `_meta.json` description file. We recommend the latter because it can make the config file more concise and clear.
 
-:::tip
+tip
 Automated navbar/sidebar will only work if there are no `nav` and `sidebar` configurations in the config file `rspress.config.ts`.
-:::
 
 ## Basic Concept
 
@@ -67,12 +66,12 @@ In the case of the sidebar level, you can fill in `_meta.json` an array with eac
 export type SideMetaItem =
   | string
   | {
-      type: 'file';
+      type: "file";
       name: string;
       label?: string;
     }
   | {
-      type: 'dir';
+      type: "dir";
       name: string;
       label?: string;
       collapsible?: boolean;
@@ -142,7 +141,7 @@ In the case of describing **custom link**, the types are as follows:
 
 ```ts
 {
-  type: 'custom-link';
+  type: "custom-link";
   link: string;
   label: string;
 }
@@ -237,7 +236,7 @@ basic
 
 In addition, you can add icons before the title through the `tag` confing, like this:
 
-```json title="_meta.json"
+```json
 {
   "type": "file",
   "name": "introduction",

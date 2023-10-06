@@ -6,8 +6,8 @@
 
 你可以在 `themeConfig.nav` 中添加自定义的导航菜单，配置为一个数组，如下：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
@@ -31,7 +31,7 @@ export interface NavItemWithLink {
   text: string;
   link: string;
   activeMatch?: string;
-  position?: 'left' | 'right';
+  position?: "left" | "right";
 }
 ```
 
@@ -61,7 +61,7 @@ export interface NavItemWithLink {
 export interface NavItemWithChildren {
   text: string;
   items: (NavItemWithLink | NavItemWithChildren)[];
-  position?: 'left' | 'right';
+  position?: "left" | "right";
 }
 ```
 
@@ -73,44 +73,44 @@ export interface NavItemWithChildren {
 
 ### 示例
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
     nav: [
       {
-        text: 'Home',
-        link: '/',
-        position: 'left',
+        text: "Home",
+        link: "/",
+        position: "left",
       },
       {
-        text: '更多链接',
+        text: "更多链接",
         items: [
           {
-            text: 'Github',
-            link: 'http://github.com/',
+            text: "Github",
+            link: "http://github.com/",
           },
           {
-            text: 'Twitter',
-            link: 'http://twitter.com/',
+            text: "Twitter",
+            link: "http://twitter.com/",
           },
           // 也可以是一个导航栏组
           {
-            text: 'Group',
+            text: "Group",
             items: [
               {
-                text: 'Personal',
-                link: 'http://xxx.com/',
+                text: "Personal",
+                link: "http://xxx.com/",
               },
               {
-                text: 'Company',
-                link: 'http://xxx.com/',
+                text: "Company",
+                link: "http://xxx.com/",
               },
             ],
           },
         ],
-        position: 'right',
+        position: "right",
       },
     ],
   },
@@ -121,8 +121,8 @@ export default defineConfig({
 
 默认情况下导航栏会带上 `白天/夜间` 模式的切换按钮，你可以通过如下的配置禁用：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
@@ -135,15 +135,15 @@ export default defineConfig({
 
 网站的社交链接。比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
     socialLinks: [
       {
-        icon: 'github',
-        link: 'github.com/web-infra-dev/modern.js',
+        icon: "github",
+        link: "github.com/web-infra-dev/modern.js",
       },
     ],
   },

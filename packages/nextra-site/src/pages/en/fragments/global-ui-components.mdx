@@ -1,9 +1,11 @@
+# 123
+
 When you register global components, the framework will automatically render these React components in the theme without manually importing and using them.
 
 Through global components, you can complete many custom functions, such as:
 
-```tsx title="compUi.tsx"
-import React from 'react';
+```tsx
+import React from "react";
 
 // Need a default export
 // The props comes from your config
@@ -16,9 +18,9 @@ In this way, the content of the component will be rendered in the theme page, su
 
 In the meanwhile, you can also use the global component to register some side effects, such as:
 
-```tsx title="compSideEffect.tsx"
-import { useEffect } from 'react';
-import { useLocation } from 'rspress/runtime';
+```tsx
+import { useEffect } from "react";
+import { useLocation } from "rspress/runtime";
 
 // Need a default export
 export default function PluginSideEffect() {

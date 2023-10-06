@@ -2,27 +2,26 @@
 
 Let's inject a global component as an example to see how to define and use plugins.
 
-:::tip TIP
+tip TIP
 In order to get better type hints, you can install `@rspress/shared` in the project, and then import the `RspressPlugin` type through `import { RspressPlugin } from '@rspress/shared'`.
-:::
 
 ### 1. Define a plugin
 
-```tsx title="plugin.ts"
-import { RspressPlugin } from '@rspress/shared';
+```tsx
+import { RspressPlugin } from "@rspress/shared";
 
 export function pluginMonitor(slug: string): RspressPlugin {
   // Component path, you need to implement the content of the component yourself
-  const componentPath = path.join(__dirname, 'Example.tsx');
+  const componentPath = path.join(__dirname, "Example.tsx");
   return {
-    name: 'plugin-monitor',
+    name: "plugin-monitor",
     // Path to global components
     globalUIComponents: [componentPath],
     // Global variable definitions for build phase
     builderConfig: {
       source: {
         define: {
-          'process.env.SLUG': JSON.stringify(slug),
+          "process.env.SLUG": JSON.stringify(slug),
         },
       },
     },
@@ -30,8 +29,8 @@ export function pluginMonitor(slug: string): RspressPlugin {
 }
 ```
 
-```tsx title="Example.tsx"
-import React from 'react';
+```tsx
+import React from "react";
 
 const Example = () => {
   console.log(process.env.SLUG);
@@ -49,11 +48,11 @@ In the above example, we define a plugin named `plugin-example`, which will defi
 
 Register plugins via `doc.plugins` in `rspress.config.ts`:
 
-```tsx title="rspress.config.ts"
-import { pluginExample } from './plugin';
+```tsx
+import { pluginExample } from "./plugin";
 
 export default {
-  plugins: [pluginMonitor('test')],
+  plugins: [pluginMonitor("test")],
 };
 ```
 

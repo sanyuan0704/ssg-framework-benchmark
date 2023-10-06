@@ -1,4 +1,4 @@
-## NoSSR
+# NoSSR
 
 用于在服务端渲染时不渲染某些组件。使用方法如下：
 
@@ -18,7 +18,7 @@ const Component = () => {
 
 你可以在文档中直接使用 Tab/Tabs 组件来实现 tab 切换的效果。比如
 
-```tsx title="index.mdx"
+```tsx
 import { Tab, Tabs } from "rspress/theme";
 
 function App() {
@@ -31,9 +31,8 @@ function App() {
 }
 ```
 
-:::info 提醒
+info 提醒
 为了让你更方便地使用这些组件，框架内部对于 `rspress/theme` 这个包做了 alias 处理，所以你可以直接使用 `@theme` 来引入这些组件。
-:::
 
 其中 Tabs 组件的 props 类型如下:
 
@@ -66,7 +65,7 @@ interface TabProps {
 
 PackageManagerTabs 组件用于在文档中展示不同包管理器的命令。使用方法如下：
 
-```tsx title="index.mdx"
+```tsx
 import { PackageManagerTabs } from "@theme";
 
 function App() {
@@ -101,17 +100,15 @@ interface PackageManagerTabsProps {
 
 当 `command` 设置为字符串时，会默认展示 npm、yarn、pnpm、bun 四个 tab，并且组件内部为自动在 command 前面添加对应的包管理器命令。如果你需要展示额外的 tab，可以通过 `additionalTabs` 来实现。
 
-:::tip
+tip
 
 在 install 命令中，对 yarn 和 bun 做了特殊处理，如果你的命令是`install some-packages`，在 yarn 和 bun 的 tab 中会自动将 install 替换为 add。
-
-:::
 
 ## Table of Contents
 
 渲染当前页面的 TOC
 
-```tsx title="index.mdx"
+```tsx
 import { Toc } from "@theme";
 
 function App() {

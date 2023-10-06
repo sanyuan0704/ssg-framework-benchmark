@@ -12,7 +12,7 @@
 
 首先在配置文件中写入以下的配置：
 
-```ts title="rspress.config.ts"
+```ts
 import { defineConfig } from "rspress/config";
 import { pluginPlayground } from "@rspress/plugin-playground";
 
@@ -21,18 +21,15 @@ export default defineConfig({
 });
 ```
 
-:::warning 注意
+warning 注意
 
 1. 在加入该插件后，请勿开启 `markdown.experimentalMdxRs`配置，否则会导致插件失效。
 2. 请不要同时使用该插件与 preview 插件。
 
-:::
-
 ### 内部组件
 
-:::tip 提示
+tip 提示
 建议使用 js 或 jsx 编写示例代码，避免编辑器中出现 ts 类型报错问题。
-:::
 
 内部组件的组件代码声明在 mdx 文件内。支持 jsx 或 tsx。你可以在 mdx 文件中声明如下的代码块：
 
@@ -78,9 +75,8 @@ export default App;
 ```
 ````
 
-:::tip 提示
+tip 提示
 需要保证文档为 `.mdx` 结尾的文件。
-:::
 
 这样，代码块就不会被作为组件渲染，而是保留原样。
 
@@ -88,11 +84,11 @@ export default App;
 
 除了将组件代码写在 mdx 文件的代码块中，你还可以将组件代码写在外部文件中，然后在 mdx 文件中通过 code 标签引入。比如
 
-```md title="example.mdx"
+```md
 <code src="./Demo.jsx" />
 ```
 
-```jsx title="Demo.jsx"
+```jsx
 import React from "react";
 
 export default function App() {
@@ -102,7 +98,7 @@ export default function App() {
 
 同样的，外部组件也支持 `direction` 属性：
 
-```md title="example.mdx"
+```md
 <code src="./Demo.jsx" direction="vertical" />
 ```
 
@@ -130,11 +126,9 @@ interface PlaygroundOptions {
 }
 ```
 
-:::warning 注意
+warning 注意
 
 `monacoLoader` 及 `monacoOptions` 内部会被序列化为 JSON，因此不支持部分数据类型，如函数、循环引用的对象。
-
-:::
 
 ### render
 

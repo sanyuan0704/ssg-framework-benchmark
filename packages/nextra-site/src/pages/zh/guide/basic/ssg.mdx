@@ -31,8 +31,8 @@ doc_build
 
 通过 `builderConfig.html.tags`，你可以自定义站点 HTML 内容，比如添加统计代码、添加脚本和样式等。
 
-```js title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```js
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   // ...
@@ -40,16 +40,16 @@ export default defineConfig({
     html: {
       tags: [
         {
-          tag: 'script',
+          tag: "script",
           attrs: {
-            src: 'https://cdn.example.com/your-script.js',
+            src: "https://cdn.example.com/your-script.js",
           },
         },
         {
-          tag: 'link',
+          tag: "link",
           attrs: {
-            rel: 'stylesheet',
-            href: 'https://cdn.example.com/your-style.css',
+            rel: "stylesheet",
+            href: "https://cdn.example.com/your-style.css",
           },
         },
       ],

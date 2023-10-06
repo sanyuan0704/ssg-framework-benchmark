@@ -36,7 +36,7 @@ export interface I18n {
 
 For example:
 
-```json title="i18n.json"
+```json
 {
   "getting-started": {
     "zh": "开始",
@@ -59,11 +59,11 @@ These text data are used in both **config file** and **custom components**, whic
 
 In `rspress.config.ts`, you can configure the default language of the document via `lang`, as shown in the following example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  lang: 'zh',
+  lang: "zh",
 });
 ```
 
@@ -76,44 +76,43 @@ In `rspress.config.ts`, you can configure `locales` data in two places:
 - `locales`, used to configure the `lang`, `title`, `description` and other information of the site, mainly around the information of the site itself.
 - `themeConfig.locales`, used to configure the theme's `lang`, `outline title`, `previous page/next page text` and other information, mainly for theme-related config.
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   locales: [
     {
-      lang: 'en',
+      lang: "en",
       // The label in nav bar to switch language
-      label: 'English',
-      title: 'Modern.js',
-      description: 'Modern.js 文档框架',
+      label: "English",
+      title: "Modern.js",
+      description: "Modern.js 文档框架",
     },
     {
-      lang: 'zh',
+      lang: "zh",
       // The label in nav bar to switch language
-      label: '简体中文',
-      title: 'Modern.js',
-      description: 'Rspress',
+      label: "简体中文",
+      title: "Modern.js",
+      description: "Rspress",
     },
   ],
   themeConfig: {
     locales: [
       {
-        lang: 'en',
-        outlineTitle: 'ON THIS Page',
+        lang: "en",
+        outlineTitle: "ON THIS Page",
       },
       {
-        lang: 'zh',
-        outlineTitle: '大纲',
+        lang: "zh",
+        outlineTitle: "大纲",
       },
     ],
   },
 });
 ```
 
-:::tip Note
+tip Note
 In the default theme, `themeConfig.locales` also contains all the fields in `locales`, the former takes precedence.
-:::
 
 For other international theme parameters, please refer to [API type](/api/config/config-theme#locales).
 
@@ -147,7 +146,7 @@ Through the \_meta.json file, we can configure the content of the nav bar and si
 
 In the \_meta.json configuration at the navigation bar level, you can specify `text` as an i18n key, for example:
 
-```json title="_meta.json"
+```json
 [
   {
     "text": "guide",
@@ -163,7 +162,7 @@ Here, `text` is `guide`, this value will be automatically translated into `指�
 
 In the \_meta.json configuration at the sidebar level, you can specify `label` as an i18n key, for example:
 
-```json title="_meta.json"
+```json
 [
   {
     "type": "dir",
@@ -179,6 +178,6 @@ Here, `label` is `getting-started`, this value will be automatically translated 
 
 In the process of MDX development or custom theme development, you may write some custom components, which also need to use international text, so how to get it?
 
-import UseI18n from '../../fragments/useI18n';
+import UseI18n from "../../fragments/useI18n.mdx";
 
 <UseI18n />

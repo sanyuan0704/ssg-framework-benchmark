@@ -6,8 +6,8 @@ The navbar is very important to a website. It allows users to quickly jump betwe
 
 You can add a custom navigation menu in `themeConfig.nav`, configured as an array, as follows:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
@@ -31,7 +31,7 @@ export interface NavItemWithLink {
   text: string;
   link: string;
   activeMatch?: string;
-  position?: 'left' | 'right';
+  position?: "left" | "right";
 }
 ```
 
@@ -61,7 +61,7 @@ Attribute details:
 export interface NavItemWithChildren {
   text: string;
   items: NavItem[];
-  position?: 'left' | 'right';
+  position?: "left" | "right";
 }
 ```
 
@@ -73,30 +73,30 @@ The meanings of the attributes are as follows:
 
 ### Example
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
     nav: [
       {
-        text: 'Home',
-        link: '/',
-        position: 'left',
+        text: "Home",
+        link: "/",
+        position: "left",
       },
       {
-        text: 'Links',
+        text: "Links",
         items: [
           {
-            text: 'Github',
-            link: 'http://github.com/',
+            text: "Github",
+            link: "http://github.com/",
           },
           {
-            text: 'Twitter',
-            link: 'http://twitter.com/',
+            text: "Twitter",
+            link: "http://twitter.com/",
           },
         ],
-        position: 'left',
+        position: "left",
       },
     ],
   },
@@ -107,8 +107,8 @@ export default defineConfig({
 
 By default, the navbar will have a toggle button for `Light/Dark` mode, you can disable it with the following config:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
@@ -121,15 +121,15 @@ export default defineConfig({
 
 Social Links to the Site. For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   themeConfig: {
     socialLinks: [
       {
-        icon: 'github',
-        link: 'github.com/web-infra-dev/modern.js',
+        icon: "github",
+        link: "github.com/web-infra-dev/modern.js",
       },
     ],
   },

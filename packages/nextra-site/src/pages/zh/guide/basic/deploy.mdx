@@ -20,11 +20,9 @@
 }
 ```
 
-:::tip 提示
+tip 提示
 
 对于 preview 命令，你可以通过 `--port` 参数来指定预览的端口号，例如 `rspress preview --port 8080`。
-
-:::
 
 值得关注的是，最后的产物会被输出到项目根目录的 `doc_build` 目录下，这个目录下的内容就是我们需要部署的内容。
 
@@ -34,13 +32,13 @@
 
 而所谓的静态资源，指的是产物目录中的 `static` 目录，里面包含了项目所需要的 JavaScript、CSS、图片等静态资源。在部署的时候，如果你想要将这些静态资源放到 CDN 上，以保证更好的访问性能，而不是像 HTML 一样直接放到服务器上，那么你就需要配置静态资源的前缀，这样才能够让项目正确的引用到这些静态资源，你可以通过 `builderConfig.output.assetPrefix` 来完成：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   builderConfig: {
     output: {
-      assetPrefix: 'https://cdn.com/',
+      assetPrefix: "https://cdn.com/",
     },
   },
 });
@@ -56,11 +54,11 @@ export default defineConfig({
 
 在部署的时候，我们可能需要将项目部署到一个子路径下，比如，如果你计划将你的站点部署到 `https://foo.github.io/bar/`，那么你应该将 `base` 参数设置为 `"/bar/"`：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  base: '/bar/',
+  base: "/bar/",
 });
 ```
 

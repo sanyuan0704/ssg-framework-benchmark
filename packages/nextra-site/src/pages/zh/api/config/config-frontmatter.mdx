@@ -39,7 +39,7 @@ pageType: home
 
 各个`pageType`配置的含义如下：
 
-import PageType from '@zh/fragments/page-type';
+import PageType from "@zh/fragments/page-type.mdx";
 
 <PageType />
 
@@ -61,7 +61,7 @@ export interface Hero {
   actions: {
     text: string;
     link: string;
-    theme: 'brand' | 'alt';
+    theme: "brand" | "alt";
   }[];
 }
 ```
@@ -112,13 +112,13 @@ export type Features = Feature[];
 pageType: home
 
 features:
-  - title: 'MDX: 使用灵活语法编写内容'
+  - title: "MDX: 使用灵活语法编写内容"
     details: MDX 是一种强大的内容编写方式，你可以在 Markdown 中使用 React 组件。
     icon: 📦
-  - title: '功能丰富: 一站式解决方案'
+  - title: "功能丰富: 一站式解决方案"
     details: 对全文搜索、国际化等常见功能可以做到开箱即用。
     icon: 🎨
-  - title: '扩展性强: 提供多种自定义能力'
+  - title: "扩展性强: 提供多种自定义能力"
     details: 通过其扩展机制，你可以轻松的扩展主题 UI 和构建能力。
     icon: 🚀
 ---

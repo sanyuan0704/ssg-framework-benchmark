@@ -12,7 +12,7 @@ Provide a real-time playground to preview the code blocks in Markdown/MDX files.
 
 First, write the following config in the config file:
 
-```ts title="rspress.config.ts"
+```ts
 import { defineConfig } from "rspress/config";
 import { pluginPlayground } from "@rspress/plugin-playground";
 
@@ -21,18 +21,15 @@ export default defineConfig({
 });
 ```
 
-:::warning Note
+warning Note
 
 1. After adding this plugin, please do not enable the `markdown.experimentalMdxRs` config, otherwise it will cause the plugin to fail.
 2. Please do not use this plugin with the preview plugin at the same time.
 
-:::
-
 ### Internal Components
 
-:::tip Note
+tip Note
 It is recommended to use js or jsx to write sample code to avoid ts type errors in the editor.
-:::
 
 The component code of internal components is declared in the mdx file. This plugin supports jsx and tsx. You can declare the following code block in the mdx file:
 
@@ -78,9 +75,8 @@ export default App;
 ```
 ````
 
-:::tip Tip
+tip Tip
 Make sure the document ends with `.mdx`.
-:::
 
 In this way, the code block will not be rendered as a component, but will be kept as it is.
 
@@ -88,11 +84,11 @@ In this way, the code block will not be rendered as a component, but will be kep
 
 In addition to writing the component code in the code block of the mdx file, you can also write the component code in an external file, and then import it in the mdx file through the code tag. For example
 
-```md title="example.mdx"
+```md
 <code src="./Demo.jsx" />
 ```
 
-```jsx title="Demo.jsx"
+```jsx
 import React from "react";
 
 export default function App() {
@@ -102,7 +98,7 @@ export default function App() {
 
 Same as internal components, external components also support `direction` attribute:
 
-```md title="example.mdx"
+```md
 <code src="./Demo.jsx" direction="vertical" />
 ```
 
@@ -128,11 +124,9 @@ interface PlaygroundOptions {
 }
 ```
 
-:::warning Note
+warning Note
 
 `monacoLoader` and `monacoOptions` will be serialized to JSON, so some data types, such as functions and circularly referenced objects, are not supported.
-
-:::
 
 ### render
 

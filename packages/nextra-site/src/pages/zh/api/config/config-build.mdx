@@ -8,12 +8,12 @@
 
 比如，将产物目录修改为 `doc_dist`：
 
-```ts title="rspress.config.ts"
+```ts
 export default defineConfig({
   builderConfig: {
     output: {
       distPath: {
-        root: 'doc_dist',
+        root: "doc_dist",
       },
     },
   },
@@ -26,9 +26,9 @@ export default defineConfig({
 
 用于加入 [Modern.js Builder 的插件](https://modernjs.dev/builder/plugins/introduction.html)，比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import { builderPluginStylus } from '@rspress/builder-plugin-stylus';
+```ts
+import { defineConfig } from "rspress/config";
+import { builderPluginStylus } from "@rspress/builder-plugin-stylus";
 
 export default defineConfig({
   builderPlugins: [builderPluginStylus()],
@@ -60,16 +60,16 @@ DEBUG=builder rspress dev
 
 配置 remark 插件。比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   markdown: {
     remarkPlugins: [
       [
-        require('remark-autolink-headings'),
+        require("remark-autolink-headings"),
         {
-          behavior: 'wrap',
+          behavior: "wrap",
         },
       ],
     ],
@@ -83,16 +83,16 @@ export default defineConfig({
 
 配置 rehype 插件。比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   markdown: {
     rehypePlugins: [
       [
-        require('rehype-autolink-headings'),
+        require("rehype-autolink-headings"),
         {
-          behavior: 'wrap',
+          behavior: "wrap",
         },
       ],
     ],
@@ -107,8 +107,8 @@ export default defineConfig({
 
 是否检查死链。比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   markdown: {
@@ -125,7 +125,7 @@ export default defineConfig({
 
 是否使用 MDX 的 Rust 版本编译器，为实验性质功能。比如：
 
-import MdxRs from '../../fragments/mdx-rs';
+import MdxRs from "../../fragments/mdx-rs.mdx";
 
 <MdxRs />
 
@@ -141,23 +141,22 @@ import MdxRs from '../../fragments/mdx-rs';
 
 注册全局组件，无需通过导入声明，就可以在每个 MDX 文件中使用。比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+```ts
+import { defineConfig } from "rspress/config";
+import path from "path";
 
 export default defineConfig({
   markdown: {
-    globalComponents: [path.join(__dirname, 'src/src/components/Alert.tsx')],
+    globalComponents: [path.join(__dirname, "src/src/components/Alert.tsx")],
   },
 });
 ```
 
 这样你就可以在 MDX 文件中使用 `Alert` 组件了：
 
-```mdx title="test.mdx"
+```mdx
 <Alert type="info">This is a info alert</Alert>
 ```
 
-:::danger 警告
+danger 警告
 请勿在配置 `globalComponents` 时开启 `experimentalMdxRs`，否则会导致全局组件不生效。
-:::

@@ -8,12 +8,12 @@
 
 由于该插件是内置插件，所以不需要在配置文件手动注册，只需要在 `mediumZoom` 字段中配置即可。比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   mediumZoom: {
-    selector: '.rspress-doc img',
+    selector: ".rspress-doc img",
   },
 });
 ```

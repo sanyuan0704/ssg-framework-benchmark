@@ -52,7 +52,6 @@ module.exports = {
               },
               extensions: [".js", ".jsx", ".ts", ".tsx", ".md", ".mdx"],
             },
-            cache: false,
           };
         },
       };

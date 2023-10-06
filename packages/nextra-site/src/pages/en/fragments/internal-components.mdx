@@ -1,4 +1,4 @@
-## NoSSR
+# NoSSR
 
 Used to skip the ssr for some components.For example
 
@@ -18,7 +18,7 @@ const Component = () => {
 
 You can directly use the Tab/Tabs component in the document to achieve the effect of tab switching. for example:
 
-```tsx title="index.mdx"
+```tsx
 import { Tab, Tabs } from "rspress/theme";
 
 function App() {
@@ -31,9 +31,8 @@ function App() {
 }
 ```
 
-:::info Note
+info Note
 In order to make it easier for you to use these components, the `rspress/theme` package has been aliased inside the framework, so you can directly use `@theme` to import these components.
-:::
 
 The props type of the Tabs component is as follows:
 
@@ -66,7 +65,7 @@ The `value` field is used to identify the current tab, if not passed, the defaul
 
 The PackageManagerTabs component is used to display commands for different package managers in the documentation. The usage is as follows:
 
-```tsx title="index.mdx"
+```tsx
 import { PackageManagerTabs } from "@theme";
 
 function App() {
@@ -101,17 +100,15 @@ interface PackageManagerTabsProps {
 
 When `command` is set to a string, it will default to displaying three tabs: npm, yarn, pnpm and bun, and the component will automatically add the corresponding package manager command before the command. If you need to display additional tabs, you can achieve this through `additionalTabs`.
 
-:::tip
+tip
 
 In the install command, special processing has been done for yarn and bun. If your command is `install some-packages`, the install will be automatically replaced with add in the yarn/bun tab.
-
-:::
 
 ## Table of Contents
 
 Render TOC of current page
 
-```tsx title="index.mdx"
+```tsx
 import { Toc } from "@theme";
 
 function App() {

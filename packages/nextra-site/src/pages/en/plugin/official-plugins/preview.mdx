@@ -12,7 +12,7 @@ Used to preview components in the code block of md(x) files.
 
 First, write the following config in the config file:
 
-```ts title="rspress.config.ts"
+```ts
 import { defineConfig } from "rspress/config";
 import { pluginPreview } from "@rspress/plugin-preview";
 
@@ -21,11 +21,9 @@ export default defineConfig({
 });
 ```
 
-:::warning Note
+warning Note
 
 After adding this plugin, please do not enable the `markdown.experimentalMdxRs` config, otherwise it will cause the plugin to fail.
-
-:::
 
 ### Internal Components
 
@@ -54,9 +52,8 @@ export default App;
 ```
 ````
 
-:::tip Tip
+tip Tip
 Make sure the document ends with `.mdx`.
-:::
 
 In this way, the code block will not be rendered as a component, but will be kept as it is.
 
@@ -64,11 +61,11 @@ In this way, the code block will not be rendered as a component, but will be kep
 
 In addition to writing the component code in the code block of the mdx file, you can also write the component code in an external file, and then import it in the mdx file through the code tag. For example
 
-```md title="example.mdx"
+```md
 <code src="./Demo.tsx" />
 ```
 
-```tsx title="Demo.tsx"
+```tsx
 export default function App() {
   return <div>Hello World</div>;
 }

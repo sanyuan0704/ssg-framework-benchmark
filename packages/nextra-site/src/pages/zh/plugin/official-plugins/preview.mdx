@@ -12,7 +12,7 @@
 
 首先在配置文件中写入以下的配置：
 
-```ts title="rspress.config.ts"
+```ts
 import { defineConfig } from "rspress/config";
 import { pluginPreview } from "@rspress/plugin-preview";
 
@@ -21,9 +21,8 @@ export default defineConfig({
 });
 ```
 
-:::warning 注意
+warning 注意
 在加入该插件后，请勿开启 `markdown.experimentalMdxRs`配置，否则会导致插件失效。
-:::
 
 ### 内部组件
 
@@ -52,9 +51,8 @@ export default App;
 ```
 ````
 
-:::tip 提示
+tip 提示
 需要保证文档为 `.mdx` 结尾的文件。
-:::
 
 这样，代码块就不会被作为组件渲染，而是保留原样。
 
@@ -62,11 +60,11 @@ export default App;
 
 除了将组件代码写在 mdx 文件的代码块中，你还可以将组件代码写在外部文件中，然后在 mdx 文件中通过 code 标签引入。比如
 
-```md title="example.mdx"
+```md
 <code src="./Demo.tsx" />
 ```
 
-```tsx title="Demo.tsx"
+```tsx
 export default function App() {
   return <div>Hello World</div>;
 }

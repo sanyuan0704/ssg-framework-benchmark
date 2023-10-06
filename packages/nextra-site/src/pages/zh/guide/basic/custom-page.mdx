@@ -14,33 +14,33 @@ Rspress 提供了多种方式能让你自定义页面的内容，包括：
 
 在 `rspress.config.ts` 中添加以下配置：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+```ts
+import { defineConfig } from "rspress/config";
+import path from "path";
 
 export default defineConfig({
-  globalUIComponents: [path.join(__dirname, 'components', 'MyComponent.tsx')],
+  globalUIComponents: [path.join(__dirname, "components", "MyComponent.tsx")],
 });
 ```
 
 `globalUIComponents` 的每一项可以是一个字符串，代表组件的文件路径；也可以是一个数组，第一项为组件的文件路径，第二项为组件的 props 对象，比如：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   globalUIComponents: [
     [
-      path.join(__dirname, 'components', 'MyComponent.tsx'),
+      path.join(__dirname, "components", "MyComponent.tsx"),
       {
-        foo: 'bar',
+        foo: "bar",
       },
     ],
   ],
 });
 ```
 
-import GlobalUIComponents from '@zh/fragments/global-ui-components';
+import GlobalUIComponents from "@zh/fragments/global-ui-components.mdx";
 
 <GlobalUIComponents />
 
@@ -52,12 +52,12 @@ import GlobalUIComponents from '@zh/fragments/global-ui-components';
 
 在 `rspress.config.ts` 中添加以下配置：
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+```ts
+import { defineConfig } from "rspress/config";
+import path from "path";
 
 export default defineConfig({
-  globalStyles: path.join(__dirname, 'styles/index.css'),
+  globalStyles: path.join(__dirname, "styles/index.css"),
 });
 ```
 
@@ -107,7 +107,7 @@ Rspress 的约定式路由支持了两种路由，一种是文档路由，即用
 
 对于前者，你可以在 frontmatter 中添加 `pageType` 字段来指定页面的布局结构，比如：
 
-```mdx title="foo.mdx"
+```mdx
 ---
 pageType: custom
 ---
@@ -115,17 +115,17 @@ pageType: custom
 
 对于后者，你可以添加如下的导出来指定 `pageType`：
 
-```tsx title="foo.tsx"
+```tsx
 // 导出 frontmatter 对象，其含义与 md(x) 文件中的 frontmatter 一致
 export const frontmatter = {
   // 声明布局类型
-  pageType: 'custom',
+  pageType: "custom",
 };
 ```
 
 pageType 可以配置为如下的值：
 
-import PageType from '@zh/fragments/page-type';
+import PageType from "@zh/fragments/page-type.mdx";
 
 <PageType />
 
@@ -139,7 +139,7 @@ import PageType from '@zh/fragments/page-type';
 
 示例：
 
-```mdx title="foo.mdx"
+```mdx
 ---
 navbar: false
 sidebar: false

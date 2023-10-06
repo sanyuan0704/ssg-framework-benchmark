@@ -53,69 +53,55 @@ title: Hello World
 
 ## 自定义容器
 
-你可以使用 `:::` 语法来创建自定义容器，且支持自定义标题。例如：
+你可以使用 `` 语法来创建自定义容器，且支持自定义标题。例如：
 
 **输入：**
 
 ```markdown
-:::tip
+tip
 这是一个 `tip` 类型的 `block`
-:::
 
-:::info
+info
 这是一个 `info` 类型的 `block`
-:::
 
-:::warning
+warning
 这是一个 `warning` 类型的 `block`
-:::
 
-:::danger
+danger
 这是一个 `danger` 类型的 `block`
-:::
 
-::: details
+details
 这是一个 `details` of type `block`
-:::
 
-:::tip 自定义标题
+tip 自定义标题
 自定义标题的 `block`
-:::
 
-:::tip{title=自定义标题}
+tip{title=自定义标题}
 自定义标题的 `block`
-:::
 ```
 
 **输出：**
 
-:::tip
+tip
 这是一个 `tip` 类型的 `block`
-:::
 
-:::info
+info
 这是一个 `info` 类型的 `block`
-:::
 
-:::warning
+warning
 这是一个 `warning` 类型的 `block`
-:::
 
-:::danger
+danger
 这是一个 `danger` 类型的 `block`
-:::
 
-::: details
+details
 这是一个 `details` of type `block`
-:::
 
-:::tip 自定义标题
+tip 自定义标题
 自定义标题的 `block`
-:::
 
-:::tip{title="自定义标题"}
+tip{}
 自定义标题的 `block`
-:::
 
 ## 代码块
 
@@ -127,22 +113,22 @@ title: Hello World
 
 ````md
 ```js
-console.log('Hello World');
+console.log("Hello World");
 ```
 
-```js title="hello.js"
-console.log('Hello World');
+```js
+console.log("Hello World");
 ```
 ````
 
 **输出:**
 
 ```js
-console.log('Hello World');
+console.log("Hello World");
 ```
 
-```js title="hello.js"
-console.log('Hello World');
+```js
+console.log("Hello World");
 ```
 
 ### 代码行高亮
@@ -153,7 +139,7 @@ console.log('Hello World');
 
 ````md
 ```js {1,3-5}
-console.log('Hello World');
+console.log("Hello World");
 
 const a = 1;
 console.log(a);
@@ -165,7 +151,7 @@ console.log(b);
 **输出:**
 
 ```js {1,3-5}
-console.log('Hello World');
+console.log("Hello World");
 
 const a = 1;
 console.log(a);
@@ -178,8 +164,8 @@ console.log(b);
 **输入:**
 
 ````md
-```js title="hello.js" {1,3-5}
-console.log('Hello World');
+```js {1,3-5}
+console.log("Hello World");
 
 const a = 1;
 
@@ -193,8 +179,8 @@ console.log(b);
 
 **输出:**
 
-```js title="hello.js" {1,3-5}
-console.log('Hello World');
+```js {1,3-5}
+console.log("Hello World");
 
 const a = 1;
 
@@ -209,7 +195,7 @@ console.log(b);
 
 如果你想要显示代码行号，你可以在配置文件中开启 `showLineNumbers` 选项:
 
-```ts title="rspress.config.ts"
+```ts
 export default {
   // ...
   markdown: {
@@ -222,6 +208,6 @@ export default {
 
 你可以通过如下的配置开启 Rust 版本的 MDX 编译器:
 
-import MdxRs from '../../fragments/mdx-rs';
+import MdxRs from "../../fragments/mdx-rs.mdx";
 
 <MdxRs />

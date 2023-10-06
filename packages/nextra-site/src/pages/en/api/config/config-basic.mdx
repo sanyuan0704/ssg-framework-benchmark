@@ -7,11 +7,11 @@
 
 Deployment base path. For example, if you plan to deploy your site to `https://foo.github.io/bar/`, then you should set `base` to `"/bar/"`:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  base: '/bar/',
+  base: "/bar/",
 });
 ```
 
@@ -22,11 +22,11 @@ export default defineConfig({
 
 Site title. This parameter will be used as the title of the HTML page. For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  title: 'My Site',
+  title: "My Site",
 });
 ```
 
@@ -37,11 +37,11 @@ export default defineConfig({
 
 Site description. This will be used as the description of the HTML page. For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  description: 'My Site Description',
+  description: "My Site Description",
 });
 ```
 
@@ -52,11 +52,11 @@ export default defineConfig({
 
 Site icon. This path will be used as the icon path for the HTML page. For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  icon: '/favicon.ico',
+  icon: "/favicon.ico",
 });
 ```
 
@@ -69,11 +69,11 @@ The framework will find your icon in the `public` directory, of course you can a
 
 Site logo. This path will be used as the logo path in the upper left corner of the navbar. For example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  logo: '/logo.png',
+  logo: "/logo.png",
 });
 ```
 
@@ -81,13 +81,13 @@ The framework will find your icon in the `public` directory, you can also set it
 
 Of course you can set different logos for dark/light mode:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   logo: {
-    dark: '/logo-dark.png',
-    light: '/logo-light.png',
+    dark: "/logo-dark.png",
+    light: "/logo-light.png",
   },
 });
 ```
@@ -99,11 +99,11 @@ export default defineConfig({
 
 Custom output directory for built sites. for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  outDir: 'doc_build',
+  outDir: "doc_build",
 });
 ```
 
@@ -122,22 +122,22 @@ export interface Locale {
 
 I18n config of the site. for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   locales: [
     {
-      lang: 'en-US',
-      label: 'English',
-      title: 'Doc Tools',
-      description: 'Doc Tools',
+      lang: "en-US",
+      label: "English",
+      title: "Doc Tools",
+      description: "Doc Tools",
     },
     {
-      lang: 'zh-CN',
-      label: '简体中文',
-      title: '文档框架',
-      description: '文档框架',
+      lang: "zh-CN",
+      label: "简体中文",
+      title: "文档框架",
+      description: "文档框架",
     },
   ],
 });
@@ -154,15 +154,15 @@ Whether to enable the image zoom function. It is enabled by default, you can dis
 
 Example usage:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   // Turn off image zoom
   mediumZoom: false,
   // Configure the CSS selector to customize the picture to be zoomed, the default is '.rspress-doc img'
   mediumZoom: {
-    selector: '.rspress-doc img',
+    selector: ".rspress-doc img",
   },
 });
 ```
@@ -173,20 +173,20 @@ export default defineConfig({
 
 You can add search runtime hooks logic through the `searchHooks` parameter, for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+```ts
+import { defineConfig } from "rspress/config";
+import path from "path";
 
 export default defineConfig({
   search: {
-    searchHooks: path.join(__dirname, 'searchHooks.ts'),
+    searchHooks: path.join(__dirname, "searchHooks.ts"),
   },
 });
 ```
 
 In `searchHooks.ts`, you need to export the `onSearch` function, which will be called every time a search is performed. The input parameter is the search keyword, and you can customize the search interception logic here, for example:
 
-```ts title="searchHooks.ts"
+```ts
 // Supports async function
 export async function onSearch(query: string) {
   // Execute custom logic, such as logging reporting
@@ -201,33 +201,33 @@ export async function onSearch(query: string) {
 
 You can register global UI components through the `globalUIComponents` parameter, for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+```ts
+import { defineConfig } from "rspress/config";
+import path from "path";
 
 export default defineConfig({
-  globalUIComponents: [path.join(__dirname, 'components', 'MyComponent.tsx')],
+  globalUIComponents: [path.join(__dirname, "components", "MyComponent.tsx")],
 });
 ```
 
 The item of `globalUIComponents` can be a string, which is the path of the component file, or an array, the first item is the path of the component file, and the second item is the component props, for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   globalUIComponents: [
     [
-      path.join(__dirname, 'components', 'MyComponent.tsx'),
+      path.join(__dirname, "components", "MyComponent.tsx"),
       {
-        foo: 'bar',
+        foo: "bar",
       },
     ],
   ],
 });
 ```
 
-import GlobalUIComponents from '../../fragments/global-ui-components.mdx';
+import GlobalUIComponents from "../../fragments/global-ui-components.mdx";
 
 <GlobalUIComponents />
 
@@ -237,13 +237,13 @@ import GlobalUIComponents from '../../fragments/global-ui-components.mdx';
 
 You can enable multi-version support through the `multiVersion` parameter, for example:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   multiVersion: {
-    default: 'v1',
-    versions: ['v1', 'v2'],
+    default: "v1",
+    versions: ["v1", "v2"],
   },
 });
 ```
@@ -264,11 +264,11 @@ Custom route config.
 Add some extra files in the route. By default, only the files in the document root directory will be included in the route. If you want to add some extra files to the route, you can use this option. For example:
 
 ```js
-import { defineConfig } from 'rspress/config';
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   route: {
-    include: ['other-dir/**/*'],
+    include: ["other-dir/**/*"],
   },
 });
 ```
@@ -283,11 +283,11 @@ export default defineConfig({
 Exclude some files from the route. For example:
 
 ```js
-import { defineConfig } from 'rspress/config';
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   route: {
-    exclude: ['custom.tsx', 'component/**/*'],
+    exclude: ["custom.tsx", "component/**/*"],
   },
 });
 ```
@@ -302,11 +302,11 @@ export default defineConfig({
 The extensions of the files that will be included in the route. By default, Rspress will include all `'js'`, `'jsx'`, `'ts'`, `'tsx'`, `'md'`, `'mdx'` files in the route. If you want to customize the extensions, you can use this option. For example:
 
 ```js
-import { defineConfig } from 'rspress/config';
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   route: {
-    extensions: ['.jsx', '.md', '.mdx'],
+    extensions: [".jsx", ".md", ".mdx"],
   },
 });
 ```
@@ -319,7 +319,7 @@ export default defineConfig({
 Generate url without suffix when `cleanUrls` is `true` for shorter url link.
 
 ```js
-import { defineConfig } from 'rspress/config';
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   route: {

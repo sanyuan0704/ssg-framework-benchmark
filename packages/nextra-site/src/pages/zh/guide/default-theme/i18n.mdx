@@ -36,7 +36,7 @@ export interface I18n {
 
 举个例子:
 
-```json title="i18n.json"
+```json
 {
   "getting-started": {
     "zh": "开始",
@@ -59,11 +59,11 @@ export interface I18n {
 
 在 `rspress.config.ts`中，你可以通过 `lang` 配置文档的默认语言，如下例子所示:
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  lang: 'zh',
+  lang: "zh",
 });
 ```
 
@@ -76,45 +76,44 @@ export default defineConfig({
 - `locales`，用于配置站点的`语言`、`标题`、`描述`等信息，主要围绕站点本身的信息来配置。
 - `themeConfig.locales`，用于配置主题的`语言`、`大纲栏标题`、`上一页/下一页文本`等信息，主要进行主题相关的配置。
 
-```ts title="rspress.config.ts"
-import { defineConfig } from 'rspress/config';
+```ts
+import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   // locales 为一个对象数组
   locales: [
     {
-      lang: 'en',
+      lang: "en",
       // 导航栏切换语言的标签
-      label: 'English',
-      title: 'Modern.js',
-      description: 'Modern.js 文档框架',
+      label: "English",
+      title: "Modern.js",
+      description: "Modern.js 文档框架",
     },
     {
-      lang: 'zh',
+      lang: "zh",
       // 导航栏切换语言的标签
-      label: '简体中文',
-      title: 'Modern.js',
-      description: 'Rspress',
+      label: "简体中文",
+      title: "Modern.js",
+      description: "Rspress",
     },
   ],
   themeConfig: {
     locales: [
       {
-        lang: 'en',
-        outlineTitle: 'ON THIS Page',
+        lang: "en",
+        outlineTitle: "ON THIS Page",
       },
       {
-        lang: 'zh',
-        outlineTitle: '大纲',
+        lang: "zh",
+        outlineTitle: "大纲",
       },
     ],
   },
 });
 ```
 
-:::tip 注意
+tip 注意
 默认主题中， `themeConfig.locales` 也包含 `locales` 中的所有字段，前者优先级更高。
-:::
 
 对于其它的国际化主题参数配置，请参考[API 类型](/api/config/config-theme#locales)。
 
@@ -148,7 +147,7 @@ docs
 
 在导航栏级别的 \_meta.json 配置中，你可以将 `text` 指定为 i18n key，比如:
 
-```json title="_meta.json"
+```json
 [
   {
     "text": "guide",
@@ -164,7 +163,7 @@ docs
 
 在侧边栏级别的 \_meta.json 配置中，你可以将 `label` 指定为 i18n key，比如:
 
-```json title="_meta.json"
+```json
 [
   {
     "type": "dir",
@@ -180,6 +179,6 @@ docs
 
 在 MDX 开发或者自定义主题开发的过程中，你可能会写一些自定义组件，这些组件中也需要使用到国际化文本，那么如何获取呢？
 
-import UseI18n from '../../fragments/useI18n';
+import UseI18n from "../../fragments/useI18n.mdx";
 
 <UseI18n />
