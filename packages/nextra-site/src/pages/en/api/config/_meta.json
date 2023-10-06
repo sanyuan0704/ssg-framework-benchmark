@@ -1,0 +1,6 @@
+{
+  "config-basic": "config-basic",
+  "config-theme": "config-theme",
+  "config-frontmatter": "config-frontmatter",
+  "config-build": "config-build"
+}

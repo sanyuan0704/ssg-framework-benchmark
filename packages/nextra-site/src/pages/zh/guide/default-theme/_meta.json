@@ -1,0 +1,9 @@
+{
+  "navbar": "NavBar",
+  "home-page": "Home",
+  "doc-page": "Documentation",
+  "overview-page": "Overview",
+  "i18n": "Internationalization",
+  "multi-version": "Multi-Version",
+  "components": "Components"
+}

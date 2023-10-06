@@ -1,0 +1,9 @@
+{
+  "conventional-route": "conventional-route",
+  "auto-nav-sidebar": "auto-nav-sidebar",
+  "use-mdx": "use-mdx",
+  "static-assets": "static-assets",
+  "custom-page": "custom-page",
+  "ssg": "ssg",
+  "deploy": "deploy"
+}
